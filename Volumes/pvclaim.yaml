@@ -1,0 +1,15 @@
+#JOSE DE JESUS HERRERA PADILLA 
+#INSTITUTO TECNOLOGICO DE LEON
+#LABORATORIO PARA EL DESPLIGUE DE APLICACIONES
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+spec:
+  storageClassName: systemfiles
+  accessModes: 
+    - ReadWriteOnce #el volumen se puede montar como lectura-escritura por un solo nodo
+  resources:
+    requests:
+      storage: 10Gi
+

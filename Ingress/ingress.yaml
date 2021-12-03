@@ -1,0 +1,24 @@
+#JOSE DE JESUS HERRERA PADILLA 
+#INSTITUTO TECNOLOGICO DE LEON
+#LABORATORIO PARA EL DESPLIGUE DE APLICACIONES
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-appweb
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: app.jherrera.com #nombre para acceder
+    http: 
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: apache-svc #nombre que usaste del servicio
+            port:
+              number: 80
+
+#archivo hosts de w10
+#C:\Windows\System32\drivers\etc\hosts

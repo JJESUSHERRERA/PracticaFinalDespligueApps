@@ -1,0 +1,14 @@
+#JOSE DE JESUS HERRERA PADILLA 
+#INSTITUTO TECNOLOGICO DE LEON
+#LABORATORIO PARA EL DESPLIGUE DE APLICACIONES
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: jherrera
+    labels:
+      tipo: desarrollo #etiqueta
+
+#se necesita primero crear nuestro spacename 
+      #kubectl apply -f Spacename.yaml
+#correr los deployment con el campo -n=jherrera
+    # kubectl apply -f deployname.yaml --namespace=jherrera 

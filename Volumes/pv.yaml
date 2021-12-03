@@ -1,0 +1,17 @@
+#JOSE DE JESUS HERRERA PADILLA 
+#INSTITUTO TECNOLOGICO DE LEON
+#LABORATORIO PARA EL DESPLIGUE DE APLICACIONES
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: systemfiles 
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce #solo por 1 nodo al mismo tiempo
+  hostPath:
+    path: "/mnt/data" #especifica que el volumen está en /mnt/datael nodo del clúster.

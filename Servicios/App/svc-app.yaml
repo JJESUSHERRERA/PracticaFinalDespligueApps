@@ -1,0 +1,21 @@
+#JOSE DE JESUS HERRERA PADILLA 
+#INSTITUTO TECNOLOGICO DE LEON
+#LABORATORIO PARA EL DESPLIGUE DE APLICACIONES
+apiVersion: v1
+kind: Service
+metadata:
+  name: apache-svc
+  labels:
+    app: app
+    tier: frontend
+spec:
+  type: NodePort #necesitamos llegar a el
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: "TCP"
+  selector:
+    app: app
+    tier: frontend
+
+

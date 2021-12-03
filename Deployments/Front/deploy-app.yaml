@@ -1,0 +1,26 @@
+#JOSE DE JESUS HERRERA PADILLA 
+#INSTITUTO TECNOLOGICO DE LEON
+#LABORATORIO PARA EL DESPLIGUE DE APLICACIONES
+apiVersion: apps/v1 #se usa para versiones anteriores a 1.9.0
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: app
+spec:
+  selector: #permite seleccionar un conjuntos de objetos que cumplan las condiciones
+    matchLabels:
+      app: app
+      tier: frontend
+  replicas: 7 #indicas al controlador que se ejecute 1 pods
+  template: #plantilla que define los containers
+    metadata:
+      labels:
+        app: app
+        tier: frontend
+    spec:
+      containers:
+      - name: app-php
+        image: jjesusherrera/my-docker-php:v3
+        ports: 
+        - containerPort: 80 
